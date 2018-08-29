@@ -2,8 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-let app = express();
+const port = process.env.PORT || 3100;
 
+let app = express();
 
 //get handler for a http request
 // header is in request
@@ -57,6 +58,6 @@ app.get('/bad', (request, response) => {
   });
 });
 
-app.listen(3100, () => {
-  console.log('server is up on port 3100');
+app.listen(port, () => {
+  console.log(`server is up on port ${port}`);
 });
