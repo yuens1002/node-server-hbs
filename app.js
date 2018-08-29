@@ -19,7 +19,7 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
+
 
 app.use((request, response, next)=> {
   let now = new Date().toString();
@@ -28,6 +28,15 @@ app.use((request, response, next)=> {
   fs.appendFileSync('server.log', log + '\n');
   next();
 });
+
+app.use((request, response, next) => {
+  response.render('maintenace.hbs', {
+    pageTitle: 'site is in maintenace, will be right back',
+    pageContent: 'don\'t worry, it\'s okay.  grab a cup of coffee, relax and breath... all is fine!'
+  });
+})
+
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (request, response) => {
   response.render('index.hbs', {
