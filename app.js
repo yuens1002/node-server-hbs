@@ -30,12 +30,12 @@ app.use((request, response, next)=> {
   next();
 });
 
-app.use((request, response, next) => {
-  response.render('maintenace.hbs', {
-    pageTitle: 'site is in maintenace, will be right back',
-    pageContent: 'don\'t worry, it\'s okay.  grab a cup of coffee, relax and breath... all is fine!'
-  });
-})
+// app.use((request, response, next) => {
+//   response.render('maintenace.hbs', {
+//     pageTitle: 'site is in maintenace, will be right back',
+//     pageContent: 'don\'t worry, it\'s okay.  grab a cup of coffee, relax and breath... all is fine!'
+//   });
+// })
 
 app.use(express.static(__dirname + '/public'));
 
