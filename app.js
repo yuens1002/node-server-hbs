@@ -42,13 +42,21 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', (request, response) => {
   response.render('index.hbs', {
       pageTitle: 'Home',
-      pageContent: 'this is a temporary homepage'
+      pageContent: 'Welcome, this is a placeholder text to be replaced later'
   });
 });
 
 app.get('/about', (request, response) => {
   response.render('about.hbs', {
-      pageTitle: 'About Page'
+      pageTitle: 'About',
+      pageContent: 'About page dummy text to be replaced later'
+  });
+});
+
+app.get('/projects', (request, response) => {
+  response.render('projects.hbs', {
+      pageTitle: 'Projects',
+      pageContent: 'Placeholder text for what will be replaced with relavent context'
   });
 });
 
